@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Seed & Scale</title>
+  <link rel="stylesheet" href="../Style/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <main class="login-page">
+      <section class="login-panel">
+        <div class="login-brand">
+          <img src="../Media/logo.png" alt="Seed & Scale logo" class="brand-logo" />
+          <div>
+            <h1>Welcome back</h1>
+            <p>Sign in to continue to your growth dashboard.</p>
+          </div>
+        </div>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <div class="field-group">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="username" required />
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="field-group">
+            <div class="field-label-row">
+              <label for="password">Password</label>
+              <button type="button" class="link-button" id="togglePassword">Show</button>
+            </div>
+            <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+            <span class="field-error" id="passwordError"></span>
+          </div>
+
+          <div class="form-meta">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember" name="remember" />
+              Remember me
+            </label>
+            <a href="#" class="text-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="primary-button">Sign in</button>
+          <p class="submit-message" id="submitMessage"></p>
+        </form>
+
+        <p class="bottom-note">
+          New to Seed & Scale? <a class="text-link" href="signup.html">Create an account</a>.
+        </p>
+      </section>
+
+      <aside class="login-sidecard">
+        <div class="sidecard-content">
+          <h2>Fast, secure access</h2>
+          <p>Use a valid email and password. A strong password should be 8+ characters with letters and numbers.</p>
+          <ul>
+            <li>Secure validation checks</li>
+            <li>Modern responsive layout</li>
+            <li>Immediate feedback on errors</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="../JavaScripts/main.js"></script>
+</body>
+</html>
