@@ -1,4 +1,4 @@
-const loginForm = document.getElementById('loginForm');
+﻿const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
 
 const loginState = {
@@ -20,6 +20,12 @@ const signupState = {
   passwordError: document.getElementById('signupPasswordError'),
   confirmError: document.getElementById('confirmPasswordError'),
   submitMessage: document.getElementById('signupMessage')
+};
+
+const forgotState = {
+  emailInput: document.getElementById('resetEmail'),
+  emailError: document.getElementById('resetEmailError'),
+  submitMessage: document.getElementById('resetMessage')
 };
 
 const VALID_USER = {
@@ -200,5 +206,58 @@ if (signupForm && signupState.nameInput && signupState.emailInput && signupState
         ? showError(signupState.confirmError, '')
         : null;
     }
+  });
+}
+
+if (document.getElementById('forgotForm') && forgotState.emailInput) {
+  const forgotForm = document.getElementById('forgotForm');
+
+  forgotForm.addEventListener('submit', event => {
+    event.preventDefault();
+    clearErrors(forgotState);
+
+    const email = forgotState.emailInput.value.trim();
+    let hasError = false;
+
+    if (!email) {
+      showError(forgotState.emailError, 'Please enter your email address.');
+      hasError = true;
+    } else if (!validateEmail(email)) {
+      showError(forgotState.emailError, 'Enter a valid email address.');
+      hasError = true;
+    }
+
+    if (hasError) {
+      updateMessage(forgotState.submitMessage, 'Fix the highlighted field before continuing.');
+      return;
+    }
+
+    updateMessage(forgotState.submitMessage, 'If this email is registered, we have sent reset instructions.', true);
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 1400);
+  });
+
+  forgotState.emailInput.addEventListener('input', () => {
+    if (forgotState.emailError && forgotState.emailError.textContent) {
+      validateEmail(forgotState.emailInput.value) ? showError(forgotState.emailError, '') : null;
+    }
+  });
+}
+
+const mobileMenu = document.querySelector('.hamburger');
+const siteNav = document.querySelector('.site-nav');
+const navLinks = document.querySelectorAll('.site-nav a');
+
+if (mobileMenu && siteNav) {
+  mobileMenu.addEventListener('click', () => {
+    siteNav.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+    });
   });
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,27 +7,54 @@
   <link rel="stylesheet" href="../Style/style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="logo-container">
+        <img src="../Media/logo.png" alt="Seed & Scale logo" class="site-logo" />
+        <span class="brand-name">Seed & Scale</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our_mission.html">Our Mission</a></li>
+          <li><a href="ideation-board.html">Ideation Board</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
+      </nav>
+      <div class="auth-group">
+        <a href="login.html" class="btn-text">Login</a>
+        <a href="signup.html" class="btn-cta">Start Building</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
   <div class="page-shell">
     <main class="login-page">
       <section class="login-panel">
         <div class="login-brand">
           <img src="../Media/logo.png" alt="Seed & Scale logo" class="brand-logo" />
           <div>
-            <h1>Welcome back</h1>
-            <p>Sign in to continue to your growth dashboard.</p>
+            <h1>Access the Seed & Scale incubator</h1>
+            <p>Sign in to continue contributing ideas, joining teams, and pushing projects through the Seed and Growth pipeline.</p>
           </div>
         </div>
 
         <form id="loginForm" class="login-form" novalidate>
           <div class="field-group">
-            <label for="email">Email address</label>
+            <label for="email" class="required">Email address</label>
             <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="username" required />
             <span class="field-error" id="emailError"></span>
           </div>
 
           <div class="field-group">
             <div class="field-label-row">
-              <label for="password">Password</label>
+              <label for="password" class="required">Password</label>
               <button type="button" class="link-button" id="togglePassword">Show</button>
             </div>
             <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
@@ -39,7 +66,7 @@
               <input type="checkbox" id="remember" name="remember" />
               Remember me
             </label>
-            <a href="#" class="text-link">Forgot password?</a>
+            <a href="forgot_password.html" class="text-link">Forgot password?</a>
           </div>
 
           <button type="submit" class="primary-button">Sign in</button>
@@ -53,17 +80,45 @@
 
       <aside class="login-sidecard">
         <div class="sidecard-content">
-          <h2>Fast, secure access</h2>
-          <p>Use a valid email and password. A strong password should be 8+ characters with letters and numbers.</p>
+          <h2>Your gateway to the growth pipeline</h2>
+          <p>Log in to access the Ideation Board, Collaboration Hub, and workshop schedule so you can turn validated ideas into working prototypes.</p>
           <ul>
-            <li>Secure validation checks</li>
-            <li>Modern responsive layout</li>
-            <li>Immediate feedback on errors</li>
+            <li>Seed phase peer review</li>
+            <li>Growth phase team matching</li>
+            <li>Validation workshops and exercises</li>
           </ul>
         </div>
       </aside>
     </main>
   </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>Seed & Scale</h2>
+        <p>Login and continue building your board, attending workshops, or refining ideas.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our_mission.html">Our Mission</a></li>
+          <li><a href="ideation-board.html">Ideation Board</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Need help?</h3>
+        <ul>
+          <li><a href="forgot_password.html">Reset Password</a></li>
+          <li><a href="signup.html">Create account</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Seed & Scale. Designed to work beautifully on every screen.</p>
+  </footer>
+
   <script src="../JavaScripts/main.js"></script>
 </body>
 </html>
